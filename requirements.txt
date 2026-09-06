@@ -59,3 +59,5 @@ protobuf>=4.25.0
 # HTTP utilities
 requests>=2.31.0
 
+amqtt>=0.11.0
+
