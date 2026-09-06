@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package fleet;
+
+// ─────────────────────────────────────────────────────────────
+// EdgeTelemetryPacket
+// Published by: Edge (Pair A)  →  Topic: fleet/{bus_id}/telemetry
+// Subscribed by: Server (Pair B)
+//
+// MVP NOTE: For Day 1 & 2 we use JSON dicts instead of compiled
+//           Protobuf. Upgrade to compiled .proto on Day 3.
+// ─────────────────────────────────────────────────────────────
+message EdgeTelemetryPacket {
+  string bus_id            = 1;  // e.g., "bus_1"
+  double latitude          = 2;  // GPS latitude
+  double longitude         = 3;  // GPS longitude
+  string object_type       = 4;  // e.g., "pothole", "debris", "car"
+  float  confidence        = 5;  // YOLO confidence score (0.0 - 1.0)
+  int64  timestamp_ms      = 6;  // Unix epoch milliseconds
+  int32  vehicle_count     = 7;  // Vehicles in frame (for H3 density)
+  float  lux_level         = 8;  // Ambient light (edge MAPE-K)
+  float  vibration_g       = 9;  // Road vibration in g-force
+  float  network_signal_db = 10; // Cellular signal strength (dBm)
+}
+
+// ─────────────────────────────────────────────────────────────
+// HeartbeatPacket
+// Published by: Edge (Pair A)  →  Topic: fleet/{bus_id}/heartbeat
+// Subscribed by: Server (Pair B)
+// ─────────────────────────────────────────────────────────────
+message HeartbeatPacket {
+  string bus_id       = 1;
+  float  cpu_temp_c   = 2;  // CPU temperature
+  float  ram_usage_mb = 3;  // RAM used in MB
+  float  yolo_fps     = 4;  // Current inference FPS
+  bool   camera_ok    = 5;  // Camera stream health
+  int64  timestamp_ms = 6;
+}
+
+// ─────────────────────────────────────────────────────────────
+// MediaSyncRequest
+// Published by: Server (Pair B)  →  Topic: fleet/{bus_id}/command
+// Subscribed by: Edge (Pair A)
+// ─────────────────────────────────────────────────────────────
+message MediaSyncRequest {
+  string bus_id        = 1;
+  int64  timestamp_ms  = 2;  // Timestamp of the event to clip
+  int32  clip_duration = 3;  // Duration in seconds (default: 2)
+  string defect_id     = 4;  // Server-side defect UUID to link clip to
+}

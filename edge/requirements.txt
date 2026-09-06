@@ -1,0 +1,21 @@
+# ==============================================================================
+# SIH PROJECT — Edge Node (Pair A) Dependencies
+# ==============================================================================
+
+# Computer Vision & Video Stream Decoding
+opencv-python>=4.8.0
+
+# YOLOv8 Object Detection / Road Defect Inference
+ultralytics>=8.1.0
+
+# MQTT Client for Edge-to-Cloud Telemetry & Heartbeats
+paho-mqtt>=1.6.1
+
+# Numerical computations and matrix operations
+numpy>=1.26.0
+
+# Binary Protocol Buffers (Day 3 Edge Serialization)
+protobuf>=4.25.0
+
+# HTTP utilities
+requests>=2.31.0

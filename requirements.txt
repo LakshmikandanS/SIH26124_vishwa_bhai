@@ -1,0 +1,61 @@
+# ==============================================================================
+# Smart India Hackathon (SIH) — Urban AI Fleet Intelligence
+# Master Python Requirements (All Pairs / Monorepo)
+# ==============================================================================
+# Usage:
+#   pip install -r requirements.txt
+#
+# Alternatively, install sub-components individually:
+#   pip install -r server/requirements.txt   # Backend & Core Engine (Pair B)
+#   pip install -r edge/requirements.txt     # Edge Inference & Emulation (Pair A)
+# ==============================================================================
+
+# ----------------- Server / Backend (Pair B) -----------------
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+starlette>=0.37.0
+websockets>=12.0
+
+# ----------------- Edge Inference & Computer Vision (Pair A) -
+opencv-python>=4.8.0
+ultralytics>=8.1.0
+
+# ----------------- Shared Networking & Telemetry -------------
+paho-mqtt>=1.6.1
+amqtt>=0.11.0          # Pure-Python lightweight MQTT broker (python mosquitto/broker.py)
+requests>=2.31.0
+protobuf>=4.25.0
+
+# ----------------- Spatial Algorithms & Data Science --------
+scipy>=1.12.0
+numpy>=1.26.0
+h3>=3.7.6
+
+# ----------------- Developer Utilities -----------------------
+python-dotenv>=1.0.0
+
+
+#----------------edge----------------------------------------
+# ==============================================================================
+# SIH PROJECT — Edge Node (Pair A) Dependencies
+# ==============================================================================
+
+# Computer Vision & Video Stream Decoding
+opencv-python>=4.8.0
+
+# YOLOv8 Object Detection / Road Defect Inference
+ultralytics>=8.1.0
+
+# MQTT Client for Edge-to-Cloud Telemetry & Heartbeats
+paho-mqtt>=1.6.1
+
+# Numerical computations and matrix operations
+numpy>=1.26.0
+
+# Binary Protocol Buffers (Day 3 Edge Serialization)
+protobuf>=4.25.0
+
+# HTTP utilities
+requests>=2.31.0
+

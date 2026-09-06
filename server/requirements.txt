@@ -1,0 +1,27 @@
+# ==============================================================================
+# SIH PROJECT — Server (Pair B) Dependencies
+# ==============================================================================
+
+# Core Framework & ASGI Server (Day 1)
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+starlette>=0.37.0
+websockets>=12.0
+
+# MQTT Client for Telemetry Ingestion (Day 1)
+paho-mqtt>=1.6.1
+
+# Spatial Computation & KD-Tree Deduplication (Day 2)
+scipy>=1.12.0
+numpy>=1.26.0
+
+# Uber H3 Hexagonal Grid (Day 2 Heatmaps & Density)
+h3>=3.7.6
+
+# Binary Protocol Buffers (Day 3 Serialization)
+protobuf>=4.25.0
+
+# HTTP Client utilities & environment
+requests>=2.31.0
+python-dotenv>=1.0.0

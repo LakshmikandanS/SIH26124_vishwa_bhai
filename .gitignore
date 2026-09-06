@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+*.egg
+
+# YOLOv8 model weights (allow edge models for out-of-the-box execution)
+!edge/models/*.pt
+
+# Video files (allow sample dashcam videos)
+!edge/assets/*.mp4
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Node.js / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+mosquitto/data/
+mosquitto/log/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Protobuf generated files
+# (keep proto/telemetry_pb2.py so repo works out-of-the-box without protoc compiler)
+!proto/telemetry_pb2.py
