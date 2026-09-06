@@ -54,7 +54,8 @@ paho-mqtt>=1.6.1
 numpy>=1.26.0
 
 # Binary Protocol Buffers (Day 3 Edge Serialization)
-protobuf>=4.25.0
+# old : protobuf>=4.25.0
+protobuf>=5.27.0
 
 # HTTP utilities
 requests>=2.31.0
